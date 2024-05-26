@@ -15,9 +15,7 @@ function PodcastList() {
         <div className='grid grid-cols-4 gap-4' >
         {
           filteredPodcasts.map((podcast) => (
-            <React.Fragment key={podcast.id}> 
-              <PodcastCard podcast={podcast}></PodcastCard>
-            </React.Fragment>
+            <PodcastCard key={podcast.id} podcast={podcast} />
           ))
         }
         </div>
