@@ -1,17 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { LoadingContext } from '../context/loading';
 
 const VITE_PODCASTS_URL = import.meta.env.VITE_PODCASTS_URL;
 
 const ManagePodcasts = () => {   
 
   const [podcasts, setPodcasts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
+  const {loading, setIsLoading} = useContext(LoadingContext);
+  
   useEffect(() => {
 
     const getPodcasts = async () => {
 
       try {
+        setIsLoading(true);
         const response = await fetch(VITE_PODCASTS_URL);
         const data = await response.json();
   
@@ -24,17 +27,17 @@ const ManagePodcasts = () => {
         );
   
         setPodcasts(podcasts);
-        setLoading(false);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
-        setLoading(false);
+        setIsLoading(false);
       }
     } 
 
     getPodcasts();
-  }, []);
+  }, [setIsLoading]);
 
-  return { podcasts, loading };
+  return { podcasts };
 
 }
 

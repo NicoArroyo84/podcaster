@@ -5,14 +5,11 @@ import FilterPodcasts from './FilterPodcasts/FilterPodcasts';
 
 function PodcastList() {
 
-  const {podcasts, loading} = ManagePodcasts();
+  const {podcasts} = ManagePodcasts();
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
 
   return (
     <div className='flex flex-col'>
-      {
-        loading && <div>LOADING ....</div>
-      } 
       <FilterPodcasts podcasts={podcasts} setFilteredPodcasts={setFilteredPodcasts} />      
       <section className='mt-7 px-4 w-full pt-10'>
         <div className='grid grid-cols-4 gap-4' >
