@@ -31,6 +31,7 @@ const ManagePodcasts = () => {
              name: pod['im:name'].label,
              author: pod['im:artist'].label,
              img: pod['im:image'][2].label,
+             description: pod.summary.label,
             })
           );
     

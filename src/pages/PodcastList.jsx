@@ -1,7 +1,7 @@
-import React , { useState } from 'react';
+import { useState } from 'react';
 import ManagePodcasts from '../hooks/ManagePodcasts';
-import PodcastCard from './PodcastCard/PodcastCard';
-import FilterPodcasts from './FilterPodcasts/FilterPodcasts';
+import PodcastCard from '../components/PodcastCard/PodcastCard';
+import FilterPodcasts from '../components/FilterPodcasts/FilterPodcasts';
 
 function PodcastList() {
 
