@@ -17,17 +17,15 @@ const ManagePodcastDetails = () => {
 
     const getPodcastDetails = async () => {
 
-      const storedPodcasts = localStorage.getItem('podcastDetails_' + podcastId);
+      const storedPodcasts = JSON.parse(localStorage.getItem('podcastDetails_' + podcastId));
       const now = new Date().getTime();
 
       if (storedPodcasts && now - storedPodcasts.lastFetched < DAY_IN_MILISECONDS) {
-        setPodcastDetails(storedPodcasts.podcastDetails);
+        setPodcastDetails(JSON.parse(storedPodcasts.podcastDetails));
+        setPodcastEpisodes(JSON.parse(storedPodcasts.podcastEpisodes));
       } else {
         try {
           setIsLoading(true);
-
-          // const url = `https://api.allorigins.win/get?url=https%3A%2F%2Fitunes.apple.com%2Flookup%3Fid%3D${podcastId}%26media%3Dpodcast%26entity%3DpodcastEpisode%26limit%3D500`
-
           const url = `https://api.allorigins.win/get?url=${VITE_DETAILS_PODCAST_URL}${podcastId}%26media%3Dpodcast%26entity%3DpodcastEpisode%26limit%3D20`;
 
 
@@ -56,10 +54,11 @@ const ManagePodcastDetails = () => {
           setPodcastEpisodes(podcastEpisodesData);
           setIsLoading(false);
 
-          localStorage.setItem(`podcastDetails_${podcastId}`, {
+          localStorage.setItem(`podcastDetails_${podcastId}`, JSON.stringify({
             lastFetched: now,
-            podcastDetails: JSON.stringify(podcastDetails),
-          });
+            podcastDetails: JSON.stringify(podcastDetailsData),
+            podcastEpisodes: JSON.stringify(podcastEpisodesData),
+          }));
 
         } catch (error) {
           console.log(error);

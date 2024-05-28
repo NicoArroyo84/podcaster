@@ -10,12 +10,13 @@ function PodcastDetail() {
   let { podcast } = useLocation().state;
   
   return (
+ 
     <div className="flex">
       {
-        podcastDetails && <PodcastDetails podcast={podcast} {...podcastDetails[0]} />
+        podcast && <PodcastDetails podcast={podcast} />
       }
       {
-        podcastEpisodes && <EpisodesList podcastId={podcast.id} episodes={podcastEpisodes} />
+        podcastEpisodes && <EpisodesList podcast={podcast} episodes={podcastEpisodes} />
       }
     </div>
   );
