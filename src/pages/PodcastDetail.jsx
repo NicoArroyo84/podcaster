@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 function PodcastDetail() {
 
-  const { podcastDetails, podcastEpisodes } = ManagePodcastDetails();
+  const { podcastEpisodes } = ManagePodcastDetails();
 
   let { podcast } = useLocation().state;
   

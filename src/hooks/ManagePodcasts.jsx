@@ -8,7 +8,7 @@ const ManagePodcasts = () => {
 
   const [podcasts, setPodcasts] = useState([]);
 
-  const {loading, setIsLoading} = useContext(LoadingContext);
+  const {setIsLoading} = useContext(LoadingContext);
   
   useEffect(() => {
 

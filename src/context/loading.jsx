@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, createContext } from "react";
 
 export const LoadingContext = createContext();
@@ -11,4 +12,8 @@ export function LoadingProvider({ children }) {
       {children}
     </LoadingContext.Provider>
   )
+}
+
+LoadingProvider.propTypes = {
+  children: PropTypes.node
 }

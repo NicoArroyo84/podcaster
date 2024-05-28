@@ -9,7 +9,7 @@ const ManagePodcastDetails = () => {
 
   const [podcastDetails, setPodcastDetails] = useState(null);
   const [podcastEpisodes, setPodcastEpisodes] = useState([]);
-  const {loading, setIsLoading} = useContext(LoadingContext);
+  const {setIsLoading} = useContext(LoadingContext);
   
   const { podcastId } = useParams(); 
 
