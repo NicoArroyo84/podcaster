@@ -12,7 +12,7 @@ function PodcastList() {
     <div className='flex flex-col'>
       <FilterPodcasts podcasts={podcasts} setFilteredPodcasts={setFilteredPodcasts} />      
       <section className='mt-7 px-4 w-full pt-10'>
-        <div className='grid grid-cols-4 gap-4' >
+        <div className='grid grid-cols-4 gap-10' >
         {
           filteredPodcasts.map((podcast) => (
             <PodcastCard key={podcast.id} podcast={podcast} />

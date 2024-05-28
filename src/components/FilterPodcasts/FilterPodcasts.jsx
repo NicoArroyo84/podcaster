@@ -20,9 +20,9 @@ function FilterPodcasts({podcasts, setFilteredPodcasts}) {
 
   return (
     <div className='flex justify-end pe-4'>
-      {<span className="bg-blue-700 text-white text-base font-semibold me-2 px-4 py-1 rounded-full">{amountPodcasts}</span>}
+      {<span className="bg-sky-500 text-white text-base font-semibold me-2 px-4 py-1 rounded-lg">{amountPodcasts}</span>}
       <input
-        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-700 p-1.5 px-3"
+        className="bg-white w-1/5 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-700 p-1.5 px-3"
         placeholder='Filter podcasts ...' 
         value={search} 
         onChange={(e) => setSearch(e.target.value)} 

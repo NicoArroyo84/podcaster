@@ -5,7 +5,7 @@ function EpisodeDetails ({episode}) {
 
 
   return (
-    <section className='w-4/5 mx-auto'>
+    <section className='w-3/4 mx-auto'>
       <div className='w-11/12 mx-auto p-3 border border-gray-200 rounded-md shadow'>
         <h2 className='text-2xl font-semibold mb-4'>{episode.title}</h2>
         <div

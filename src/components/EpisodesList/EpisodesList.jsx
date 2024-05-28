@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function EpisodesList ({ podcast, episodes }) {
   return (
-    <section className='w-4/5'>  
+    <section className='w-3/4'>  
       <div className='w-11/12 mx-auto mb-7'>
         <h2 className='border border-gray-200 mx-auto p-3 rounded-md shadow text-2xl font-semibold'>
 						Episodes: {episodes.length}
@@ -14,7 +14,7 @@ function EpisodesList ({ podcast, episodes }) {
       <div className='w-11/12 mx-auto py-7 px-3 border border-gray-200 rounded-md shadow mb-7'>
 					<div className='relative overflow-x-auto'>
 						<table className='w-full text-sm text-left text-gray-500'>
-							<thead className='text-xs text-gray-700 uppercase bg-gray-50'>
+							<thead className='text-xs text-gray-700'>
 								<tr>
 									<th
 										scope='col'
@@ -45,7 +45,7 @@ function EpisodesList ({ podcast, episodes }) {
                         <Link
                           state={{podcast,episode}}
                           to={`/podcast/${podcast.id}/episode/${episode.id}`}
-                          className='text-blue-600 hover:underline'>
+                          className='text-blue-600 text-slate-500'>
                           {episode.title}
                         </Link>
                       </th>

@@ -1,18 +1,22 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function PodcastDetails( { podcast } ) {
 
 	return (
-    <aside className='w-1/5'>
+    <aside className='w-1/4'>
       <div className='w-9/12 border border-gray-200 mx-auto py-5 px-3 rounded-md shadow'>
-					<img
-						className='mx-auto rounded-md'
-						src={podcast.img}
-						alt=''
-					/>
-					<hr className='my-5' />
-					<h2 className='text-md font-semibold'>{podcast.name}</h2>
-					<p className='text-md italic'>by: {podcast.author}</p>
+					<Link to={`/podcast/${podcast.id}`} state={{podcast}}>
+						<img
+							className='mx-auto rounded-md'
+							src={podcast.img}
+							alt=''
+						/>
+						<hr className='my-5' />
+						<h2 className='text-md font-semibold'>{podcast.name}</h2>
+						<p className='text-md italic'>by: {podcast.author}</p>
+					</Link>
+				
 					<hr className='my-5' />
 					{
 						podcast.description && (
