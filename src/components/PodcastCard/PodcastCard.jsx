@@ -6,6 +6,7 @@ function PodcastCard({podcast}) {
   return (
     <Link
       state={{podcast}}
+      role='link'
       className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mb-10 transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-slate-50 duration-300" 
       to={`/podcast/${podcast.id}`}
     >
