@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import Header from "./Header";
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import Header from './Header';
 import { LoadingContext } from '../../context/loading';
 import { MemoryRouter } from 'react-router-dom';
 

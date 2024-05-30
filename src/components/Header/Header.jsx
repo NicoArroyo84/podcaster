@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { LoadingContext } from "../../context/loading";
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { LoadingContext } from '../../context/loading';
 
 function Header () {
 

@@ -1,7 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { fireEvent, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import PodcastCard from "./PodcastCard";
+import PodcastCard from './PodcastCard';
+import * as router from 'react-router';
+
 
 describe("test PodcastCard component", () => {
   let podcast; 
@@ -55,5 +57,29 @@ describe("test PodcastCard component", () => {
 
     const link = component.getByRole('link');
     expect(link).toHaveAttribute('href', `/podcast/${podcast.id}`);
+  })
+
+  test('should navigate to the podcast', () => {
+    const mockedNavigation = jest.fn();  
+    jest.spyOn(router, 'useNavigate').mockImplementation(() => mockedNavigation)
+
+    render(
+      <MemoryRouter>
+        <PodcastCard podcast={podcast} />
+      </MemoryRouter>
+    );
+
+    const link = screen.getByRole('link');
+    fireEvent.click(link);
+    expect(mockedNavigation).toHaveBeenCalledWith(
+      `/podcast/${podcast.id}`,
+      { 
+        preventScrollReset: undefined,
+        relative: undefined,
+        replace: false,
+        state: {podcast: podcast},
+        unstable_viewTransition: undefined
+      }
+    );
   })
 })

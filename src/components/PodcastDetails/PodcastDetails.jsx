@@ -27,7 +27,6 @@ function PodcastDetails( { podcast } ) {
 						)
 					}
 				</div>
-    
     </aside>
   )
 }    
